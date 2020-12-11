@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :trips
       resources :users
       resources :locations
+      get '/by_username/:username', to: 'users#login'
     end
    end
   
