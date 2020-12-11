@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+class Api::V1::LocationsController < ApplicationController
   before_action :find_location, only: [:show]
 
     def index 
