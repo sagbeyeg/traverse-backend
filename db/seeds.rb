@@ -38,8 +38,8 @@ puts "🍝 Seeding users..."
   puts "🍝 Seeding reviews..."
   5.times do
     Review.create!(
-      location_id: location.id,
-      user_id: user.id,
+      location_id: Location.all.sample.id,
+      user_id: User.all.sample.id,
       title: Faker::Music::Prince.song,
       rating: rand(1..5),
       content: Faker::Music::Prince.lyric
@@ -49,8 +49,8 @@ puts "🍝 Seeding users..."
   puts "🍝 Seeding trips..."
   5.times do
     Trip.create!(
-      location_id: location.id,
-      user_id: user.id,
+      location_id: Location.all.sample.id,
+      user_id: User.all.sample.id,
       start_date: Faker::Date.between(from: '2018-12-01', to: '2019-01-25'),
       end_date: Faker::Date.between(from: '2019-02-01', to: '2019-03-15'),
       note: Faker::Quote.matz
