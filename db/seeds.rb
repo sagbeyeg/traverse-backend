@@ -41,7 +41,7 @@ puts "🍝 Seeding users..."
       location_id: Location.all.sample.id,
       user_id: User.all.sample.id,
       title: Faker::Music::Prince.song,
-      rating: rand(1..5),
+      rating: rand(3..5),
       content: Faker::Music::Prince.lyric
     )
   end 
