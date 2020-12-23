@@ -3,5 +3,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :reviews
   has_many :trips 
   has_many :followers
-  has_many :followed
+  has_many :following
 end
