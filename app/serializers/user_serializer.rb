@@ -4,4 +4,6 @@ class UserSerializer < ActiveModel::Serializer
   has_many :trips 
   has_many :followers
   has_many :following
+  has_many :follower_relationships
+  has_many :following_relationships
 end
