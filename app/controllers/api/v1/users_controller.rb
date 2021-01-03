@@ -30,8 +30,8 @@ class Api::V1::UsersController < ApplicationController
 
   def login
     @user = User.find_by(username: params[:username])
-    if @user.valid?
-      render json: { user: UserSerializer.new(@user)}
+    if @user
+      render json: @user
     else
       render json: { error: 'failed to login user' }
     end
