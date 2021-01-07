@@ -13,7 +13,7 @@ Review.destroy_all
 Trip.destroy_all
 
 puts "🍝 Seeding users..."
-10.times do
+4.times do
   user = User.create!(
     name: Faker::JapaneseMedia::OnePiece.unique.character,
     username: Faker::Creature::Cat.unique.name.downcase,
@@ -27,36 +27,36 @@ puts "🍝 Seeding users..."
     country: Faker::Address.country,
     zipcode: Faker::Address.unique.zip_code
   )
-
-  puts "🍝 Seeding locations..."
-
-  location = Location.create!(
-    name: Faker::Movies::HarryPotter.unique.location,
-    description: Faker::Movies::HarryPotter.quote
-  )
-
-  puts "🍝 Seeding reviews..."
-  5.times do
-    Review.create!(
-      location_id: Location.all.sample.id,
-      user_id: User.all.sample.id,
-      title: Faker::Music::Prince.song,
-      rating: rand(3..5),
-      content: Faker::Music::Prince.lyric
-    )
-  end 
-  
-  puts "🍝 Seeding trips..."
-  5.times do
-    Trip.create!(
-      location_id: Location.all.sample.id,
-      user_id: User.all.sample.id,
-      start_date: Faker::Date.between(from: '2018-12-01', to: '2019-01-25'),
-      end_date: Faker::Date.between(from: '2019-02-01', to: '2019-03-15'),
-      note: Faker::Quote.matz
-    )
-  end
 end
 
+puts "🍝 Seeding locations..."
+4.times do
+  location = Location.create!(
+    name: Faker::Movies::HarryPotter.unique.location,
+    description: Faker::Movies::HarryPotter.unique.quote
+  )
+end
+
+puts "🍝 Seeding reviews..."
+5.times do
+  Review.create!(
+    location_id: Location.all.sample.id,
+    user_id: User.all.sample.id,
+    title: Faker::Music::Prince.song,
+    rating: rand(3..5),
+    content: Faker::Music::Prince.lyric
+  )
+end 
+  
+puts "🍝 Seeding trips..."
+5.times do
+  Trip.create!(
+    location_id: Location.all.sample.id,
+    user_id: User.all.sample.id,
+    start_date: Faker::Date.between(from: '2018-12-01', to: '2019-01-25'),
+    end_date: Faker::Date.between(from: '2019-02-01', to: '2019-03-15'),
+    note: Faker::Quote.matz
+  )
+end
 
 puts "🎉 Done!"
