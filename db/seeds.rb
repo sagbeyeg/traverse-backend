@@ -26,8 +26,8 @@ Location.create!(
 )
 
 Location.create!(
-  name: "Lagos",
-  description: "Nigeria is a pulsating powerhouse: as the most populous nation on the continent – nearly every fifth African is Nigerian – it dominates the region. Lagos, the main city, is resurgent: with burgeoning tech industries, posh restaurants and clubs, and an exploding arts scene, this megacity is the face of modern Africa."
+  name: "Abuja",
+  description: "Nigeria is a pulsating powerhouse: as the most populous nation on the continent – nearly every fifth African is Nigerian – it dominates the region. Abuja, one of the main city, is resurgent: with burgeoning tech industries, posh restaurants and clubs, and an exploding arts scene, this megacity is the face of modern Africa."
 )
 Location.create!(
   name: "Bora Bora",
